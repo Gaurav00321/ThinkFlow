@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -5,28 +6,18 @@ body {
   background-color: #222;
 }
 
-.main_content {
+.main-content {
   display: flex;
   flex-direction: row;
 }
 
 .recent-chats {
   padding: 20px;
-  background-color: #111111;
+  background-color: #111;
   color: gray;
   flex-basis: 15%;
   text-align: left;
   font-size: 1rem;
-  font-weight: bold;
-  border: 1px white solid;
-}
-
-.chat-header {
-  padding: 20px;
-  color: gray;
-  flex-basis: 15%;
-  text-align: left;
-  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -40,6 +31,38 @@ body {
   overflow: hidden;
 }
 
+/* Navigation Styles */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation-header h1 {
+  padding: 20px;
+  color: gray;
+  text-align: left;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.share-button button {
+  width: 100px;
+  height: 35px;
+  background-color: #222;
+  color: #fff;
+  border: 1px #555 solid;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 20px; /* Added margin to shift it to the left */
+}
+
+.share-button button:hover {
+  background-color: #333;
+}
+
+/* Chat Messages Styles */
 .chat-messages {
   flex-grow: 1;
   padding: 20px;
@@ -47,21 +70,20 @@ body {
   background-color: #222;
 }
 
-/* Scrollbar styling */
 .chat-messages::-webkit-scrollbar {
-  width: 12px; /* Scrollbar width */
+  width: 12px;
 }
 
 .chat-messages::-webkit-scrollbar-track {
-  background: transparent; /* Transparent track */
+  background: transparent;
 }
 
 .chat-messages::-webkit-scrollbar-thumb {
-  background: rgba(100, 100, 100, 0.6); /* Thumb color */
+  background: rgba(100, 100, 100, 0.6);
 }
 
 .chat-messages::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 100, 100, 0.8); /* Darker on hover */
+  background: rgba(100, 100, 100, 0.8);
 }
 
 .message {
@@ -85,6 +107,9 @@ body {
   color: #fff;
   font-size: 1rem;
   line-height: 1.5;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .message.bot .message-content {
@@ -93,14 +118,15 @@ body {
   max-width: 60%;
 }
 
+/* Chat Input Styles */
 .chat-input {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #222;
-  position: relative; /* Needed for the button positioning */
+  position: relative;
   width: 600px;
-  margin: 20px auto; /* Centers the chat input on the page */
+  margin: 20px auto;
 }
 
 .chat-input textarea {
@@ -109,30 +135,28 @@ body {
   flex-grow: 1;
   padding: 20px;
   font-size: 1rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   border: none;
   border-radius: 10px;
   resize: none;
   outline: none;
   height: 40px;
-  padding-right: 50px; /* Space for the button */
+  padding-right: 55px;
   position: relative;
-  width: 100%; /* Ensures responsiveness */
+  width: 100%;
   max-width: 600px;
 }
 
 .chat-input button {
-  position: absolute; /* Keeps the button inside the textarea */
-  top: 50%; /* Vertically centers the button */
-  transform: translateY(-50%); /* Proper vertical alignment */
-  right: 16px; /* Aligned inside the padding of the textarea */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
   width: 40px;
   height: 40px;
   background-color: #fff;
   color: #000;
   border: none;
-  border-radius: 50%; /* Circular button */
+  border-radius: 50%;
   cursor: pointer;
   outline: none;
   display: flex;
@@ -146,7 +170,7 @@ body {
 }
 
 .chat-input button::after {
-  content: "➔"; /* Arrow inside the button */
-  transform: rotate(-90deg); /* Points the arrow upwards */
+  content: "➔";
+  transform: rotate(-90deg);
   font-size: 1.3rem;
 }
