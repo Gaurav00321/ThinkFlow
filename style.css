@@ -12,14 +12,51 @@ body {
 }
 
 .recent-chats {
-  padding: 20px;
+  padding: 10px;
   background-color: #111;
   color: gray;
-  flex-basis: 15%;
+  flex-basis: 20%;
   text-align: left;
   font-size: 1rem;
   font-weight: bold;
 }
+
+.recent-chats h1 {
+  padding: 20px;
+  color: gray;
+  text-align: left;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+#new-chat-button {
+  width: 90%;
+  padding: 10px;
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+#new-chat-button:hover {
+  background-color: #333;
+}
+
+#new-chat-button::before {
+  content: "+";
+  font-size: 1.5rem;
+  margin-right: 20px; /* Space between the + and the text */
+}
+
+
 
 .chat-container {
   display: flex;

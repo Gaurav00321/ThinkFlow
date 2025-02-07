@@ -3,18 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ChatGPT UI Clone</title>
+    <title>ThinkFlow</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="main-content">
       <div class="recent-chats">
-        <!-- chats -->
+        <h1>Recents</h1>
+          <button id="new-chat-button">New Chat</button>
+          <!-- existing chats will go here -->
+        
       </div>
       <div class="chat-container">
         <div class="navigation">
           <div class="navigation-header">
-            <h1>ChatGPT</h1>
+            <h1>ThinkFlow</h1>
           </div>
           <div class="share-button">
             <button id="share-button">Share</button>
@@ -29,7 +32,7 @@
           <textarea
             id="user-input"
             rows="1"
-            placeholder="Message ChatGPT..."
+            placeholder="Message ThinkFlow..."
           ></textarea>
           <button id="send-button"></button>
         </div>
