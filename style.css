@@ -19,14 +19,60 @@ body {
   text-align: left;
   font-size: 1rem;
   font-weight: bold;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%); /* Initially hidden */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.recent-chats.open {
+  transform: translateX(0); /* Slide in when "open" class is added */
+  display: block;
 }
 
 .recent-chats h1 {
-  padding: 20px;
   color: gray;
-  text-align: left;
   font-size: 1.8rem;
   font-weight: bold;
+  margin-left: 10px;
+  flex-grow: 1;
+}
+
+.recent-chats-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.recent-chats-content {
+  flex-grow: 1; /* Allows this section to take up remaining space */
+  overflow-y: auto; /* Enables scrolling for chat content */
+}
+
+.recent-chats-footer {
+  border-top: 1px solid white;
+  padding: 10px;
+  background: #111;
+  text-align: center;
+}
+
+#toggle-drawer-button {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s;
+  z-index: 10; /* Make sure the button is always on top */
+}
+
+#toggle-drawer-button:hover {
+  background-color: #333;
 }
 
 #new-chat-button {
@@ -56,11 +102,10 @@ body {
   margin-right: 20px; /* Space between the + and the text */
 }
 
-
-
 .chat-container {
   display: flex;
   flex-direction: column;
+  flex-basis: 70%;
   width: 100%;
   height: 100vh;
   margin: auto;
@@ -92,11 +137,14 @@ body {
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin-right: 20px; /* Added margin to shift it to the left */
 }
 
 .share-button button:hover {
   background-color: #333;
+}
+
+#share-button svg {
+  margin-right: 10px; /* Adjust the spacing between the icon and text */
 }
 
 /* Chat Messages Styles */
@@ -109,6 +157,7 @@ body {
 
 .chat-messages::-webkit-scrollbar {
   width: 12px;
+  position: relative;
 }
 
 .chat-messages::-webkit-scrollbar-track {
@@ -173,14 +222,14 @@ body {
   padding: 20px;
   font-size: 1rem;
   border: none;
-  border-radius: 10px;
+  border-radius: 25px;
   resize: none;
   outline: none;
-  height: 40px;
+  height: 80px;
   padding-right: 55px;
   position: relative;
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
 }
 
 .chat-input button {

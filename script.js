@@ -29,11 +29,18 @@ function generateBotResponse(userMessage) {
   return `You said: "${userMessage}". How can I help you further?`;
 }
 
-document.getElementById('new-chat-button').addEventListener('click', function() {
-  // You can add logic here to create a new chat
-  console.log("New chat created!");
-  // For example, clear the chat container or reset the state
-  document.getElementById('chat-messages').innerHTML = ''; // Clear the messages
-});
+document
+  .getElementById("new-chat-button")
+  .addEventListener("click", function () {
+    // You can add logic here to create a new chat
+    console.log("New chat created!");
+    // For example, clear the chat container or reset the state
+    document.getElementById("chat-messages").innerHTML = ""; // Clear the messages
+  });
 
-
+document
+  .getElementById("toggle-drawer-button")
+  .addEventListener("click", function () {
+    const recentChats = document.getElementById("recent-chats");
+    recentChats.classList.toggle("open"); // This toggles the "open" class
+  });

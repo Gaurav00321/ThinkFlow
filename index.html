@@ -5,22 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ThinkFlow</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <div class="main-content">
-      <div class="recent-chats">
-        <h1>Recents</h1>
+      <!-- The Toggle Button is outside the recent-chats div -->
+      <button id="toggle-drawer-button">||</button>
+
+      <div class="recent-chats" id="recent-chats">
+        <div class="recent-chats-header">
+          <h1>Recents</h1>
           <button id="new-chat-button">New Chat</button>
+        </div>
+
+        <div class="recent-chats-content">
           <!-- existing chats will go here -->
-        
+        </div>
+
+        <div class="recent-chats-footer">footer</div>
       </div>
+
       <div class="chat-container">
         <div class="navigation">
           <div class="navigation-header">
             <h1>ThinkFlow</h1>
           </div>
           <div class="share-button">
-            <button id="share-button">Share</button>
+            <button id="share-button">
+              <i class="fas fa-share-alt"></i> Share
+            </button>
           </div>
         </div>
 
@@ -38,6 +54,7 @@
         </div>
       </div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
