@@ -19,45 +19,106 @@ body {
   text-align: left;
   font-size: 1rem;
   font-weight: bold;
-  position: relative;
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(-100%); /* Initially hidden */
-  display: flex;
-  flex-direction: column;
+  position: fixed;
+  left: -250px;
   height: 100vh;
+  width: 250px;
+  display: none;
+  flex-direction: column;
+  transition: left 0.3s ease-in-out;
+  box-shadow: 2px 0 5px rgba(255, 255, 255, 0.2);
 }
 
 .recent-chats.open {
-  transform: translateX(0); /* Slide in when "open" class is added */
-  display: block;
+  left: 0;
+  display: flex;
 }
 
-.recent-chats h1 {
-  color: gray;
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-left: 10px;
-  flex-grow: 1;
+#toggle-drawer-button {
+  position: fixed;
+  left: 10px;
+  top: 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  z-index: 10;
+}
+
+#toggle-drawer-button:hover {
+  background-color: #444;
 }
 
 .recent-chats-header {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
+  align-items: center;
+}
+
+#new-chat-button {
+  width: 90%;
+  padding: 10px;
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #555;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+#new-chat-button:hover {
+  background-color: #333;
+}
+
+#new-chat-button i {
+  margin-right: 10px;
 }
 
 .recent-chats-content {
-  flex-grow: 1; /* Allows this section to take up remaining space */
-  overflow-y: auto; /* Enables scrolling for chat content */
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
-.recent-chats-footer {
-  border-top: 1px solid white;
-  padding: 10px;
-  background: #111;
-  text-align: center;
+.recent-chats-content::-webkit-scrollbar {
+  width: 12px;
+  position: relative;
 }
+
+.recent-chats-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.recent-chats-content::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.6);
+}
+
+.recent-chats-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 100, 0.8);
+}
+
+/* Style for each recent chat */
+.recent-chat-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #333;
+  transition: background-color 0.3s;
+}
+
+.recent-chat-item:hover {
+  background-color: #333;
+}
+
+/* Other styles remain the same */
 
 #toggle-drawer-button {
   background-color: #222;
@@ -96,21 +157,11 @@ body {
   background-color: #333;
 }
 
-#new-chat-button::before {
-  content: "+";
-  font-size: 1.5rem;
-  margin-right: 20px; /* Space between the + and the text */
-}
-
-.chat-container {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 70%;
-  width: 100%;
-  height: 100vh;
-  margin: auto;
-  background-color: #222;
-  overflow: hidden;
+.recent-chats-footer {
+  border-top: 1px solid white;
+  padding: 10px;
+  background: #111;
+  text-align: center;
 }
 
 /* Navigation Styles */
@@ -145,6 +196,17 @@ body {
 
 #share-button svg {
   margin-right: 10px; /* Adjust the spacing between the icon and text */
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 60%;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  background-color: #222;
+  overflow: hidden;
 }
 
 /* Chat Messages Styles */

@@ -1,6 +1,10 @@
 const chatMessages = document.getElementById("chat-messages");
 const userInput = document.getElementById("user-input");
 const sendButton = document.getElementById("send-button");
+const recentChatsList = document.getElementById("recent-chats-list");
+
+let chatHistory = JSON.parse(localStorage.getItem("chatHistory")) || [];
+updateRecentChatsUI();
 
 sendButton.addEventListener("click", () => {
   const userMessage = userInput.value.trim();
@@ -8,7 +12,9 @@ sendButton.addEventListener("click", () => {
     addMessage("user", userMessage);
     userInput.value = "";
     setTimeout(() => {
-      addMessage("bot", generateBotResponse(userMessage));
+      const botResponse = generateBotResponse(userMessage);
+      addMessage("bot", botResponse);
+      saveChatToHistory(userMessage, botResponse);
     }, 1000);
   }
 });
@@ -25,22 +31,40 @@ function addMessage(sender, text) {
 }
 
 function generateBotResponse(userMessage) {
-  // Simple bot response logic (you can expand this)
   return `You said: "${userMessage}". How can I help you further?`;
 }
 
-document
-  .getElementById("new-chat-button")
-  .addEventListener("click", function () {
-    // You can add logic here to create a new chat
-    console.log("New chat created!");
-    // For example, clear the chat container or reset the state
-    document.getElementById("chat-messages").innerHTML = ""; // Clear the messages
+function saveChatToHistory(userMsg, botMsg) {
+  chatHistory.push({ user: userMsg, bot: botMsg });
+  if (chatHistory.length > 122) chatHistory.shift();
+  localStorage.setItem("chatHistory", JSON.stringify(chatHistory));
+  updateRecentChatsUI();
+}
+
+function updateRecentChatsUI() {
+  recentChatsList.innerHTML = "";
+  chatHistory.forEach((chat, index) => {
+    const chatItem = document.createElement("div");
+    chatItem.classList.add("recent-chat-item");
+    chatItem.textContent = chat.user.substring(0, 20) + "...";
+    chatItem.addEventListener("click", () => restoreChat(index));
+    recentChatsList.appendChild(chatItem);
   });
+}
+
+function restoreChat(index) {
+  chatMessages.innerHTML = "";
+  const chat = chatHistory[index];
+  addMessage("user", chat.user);
+  addMessage("bot", chat.bot);
+}
+
+document.getElementById("new-chat-button").addEventListener("click", () => {
+  chatMessages.innerHTML = "";
+});
 
 document
   .getElementById("toggle-drawer-button")
-  .addEventListener("click", function () {
-    const recentChats = document.getElementById("recent-chats");
-    recentChats.classList.toggle("open"); // This toggles the "open" class
+  .addEventListener("click", () => {
+    document.getElementById("recent-chats").classList.toggle("open");
   });

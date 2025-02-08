@@ -12,23 +12,26 @@
   </head>
   <body>
     <div class="main-content">
-      <!-- The Toggle Button is outside the recent-chats div -->
-      <button id="toggle-drawer-button">||</button>
+      <button id="toggle-drawer-button">
+        <i class="fas fa-bars"></i>
+      </button>
 
       <div class="recent-chats" id="recent-chats">
         <div class="recent-chats-header">
           <h1>Recents</h1>
-          <button id="new-chat-button">New Chat</button>
+          <button id="new-chat-button">
+            <i class="fas fa-plus"></i> New Chat
+          </button>
         </div>
 
-        <div class="recent-chats-content">
-          <!-- existing chats will go here -->
+        <div class="recent-chats-content" id="recent-chats-list">
+          <!-- Recent chats will be dynamically added here -->
         </div>
 
-        <div class="recent-chats-footer">footer</div>
+        <div class="recent-chats-footer">ThinkFlow © 2025</div>
       </div>
 
-      <div class="chat-container">
+      <div class="chat-container" id="chat-container">
         <div class="navigation">
           <div class="navigation-header">
             <h1>ThinkFlow</h1>
