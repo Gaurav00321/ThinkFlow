@@ -3,61 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ThinkFlow</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <title>ThinkFlow - Welcome</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="main-content">
-      <button id="toggle-drawer-button">
-        <i class="fas fa-bars"></i>
-      </button>
+    <header>
+      <h1>ThinkFlow</h1>
+    </header>
 
-      <div class="recent-chats" id="recent-chats">
-        <div class="recent-chats-header">
-          <h1>Recents</h1>
-          <button id="new-chat-button">
-            <i class="fas fa-plus"></i> New Chat
-          </button>
-        </div>
-
-        <div class="recent-chats-content" id="recent-chats-list">
-          <!-- Recent chats will be dynamically added here -->
-        </div>
-
-        <div class="recent-chats-footer">ThinkFlow © 2025</div>
+    <main>
+      <h2>Welcome to ThinkFlow</h2>
+      <p>
+        Your AI-powered assistant for seamless conversations and productivity.
+      </p>
+      <div class="button-group">
+        <a href="auth/signup.html" class="btn primary">Sign Up</a>
+        <a href="dashboard.html" class="btn secondary">Continue as Guest</a>
       </div>
+    </main>
 
-      <div class="chat-container" id="chat-container">
-        <div class="navigation">
-          <div class="navigation-header">
-            <h1>ThinkFlow</h1>
-          </div>
-          <div class="share-button">
-            <button id="share-button">
-              <i class="fas fa-share-alt"></i> Share
-            </button>
-          </div>
-        </div>
-
-        <div class="chat-messages" id="chat-messages">
-          <!-- Messages will be dynamically added here -->
-        </div>
-
-        <div class="chat-input">
-          <textarea
-            id="user-input"
-            rows="1"
-            placeholder="Message ThinkFlow..."
-          ></textarea>
-          <button id="send-button"></button>
-        </div>
+    <footer>
+      <div class="social-links">
+        <a href="https://twitter.com/thinkflow" target="_blank">Twitter</a>
+        <a href="https://linkedin.com/company/thinkflow" target="_blank"
+          >LinkedIn</a
+        >
+        <a href="https://github.com/thinkflow" target="_blank">GitHub</a>
       </div>
-    </div>
-
-    <script src="script.js"></script>
+      <p>
+        Developed by
+        <a href="https://gauravupadhyay.dev" target="_blank">Gaurav Upadhyay</a>
+      </p>
+      <p>
+        &copy; 2025
+        <a href="https://thinkflow.com" target="_blank">ThinkFlow</a>. All
+        rights reserved.
+      </p>
+    </footer>
   </body>
 </html>

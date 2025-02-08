@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThinkFlow</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="main-content">
+      <button id="toggle-drawer-button">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="recent-chats" id="recent-chats">
+        <div class="recent-chats-header">
+          <h1>Recents</h1>
+          <button id="new-chat-button">
+            <i class="fas fa-plus"></i> New Chat
+          </button>
+        </div>
+
+        <div class="recent-chats-content" id="recent-chats-list">
+          <!-- Recent chats will be dynamically added here -->
+        </div>
+
+        <div class="recent-chats-footer">ThinkFlow © 2025</div>
+      </div>
+
+      <div class="chat-container" id="chat-container">
+        <div class="navigation">
+          <div class="navigation-header">
+            <h1>ThinkFlow</h1>
+          </div>
+          <div class="nav-button">
+            <button id="share-button">
+              <i class="fas fa-share-alt"></i> Share
+            </button>
+            <div class="login-button">
+              <button>
+                <a href="auth/signup.html">Sign up</a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+          <!-- Messages will be dynamically added here -->
+        </div>
+
+        <div class="chat-input">
+          <textarea
+            id="user-input"
+            rows="1"
+            placeholder="Message ThinkFlow..."
+          ></textarea>
+          <button id="send-button"></button>
+        </div>
+      </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

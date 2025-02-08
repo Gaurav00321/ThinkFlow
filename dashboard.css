@@ -179,7 +179,12 @@ body {
   font-weight: bold;
 }
 
-.share-button button {
+.nav-button {
+  display: flex;
+  gap: 5%;
+}
+
+.nav-button button {
   width: 100px;
   height: 35px;
   background-color: #222;
@@ -190,12 +195,25 @@ body {
   transition: background-color 0.3s;
 }
 
-.share-button button:hover {
+.nav-button button:hover {
   background-color: #333;
 }
 
-#share-button svg {
+#nav-button svg {
   margin-right: 10px; /* Adjust the spacing between the icon and text */
+}
+
+.nav-button a {
+  text-decoration: none;
+  color: black;
+}
+
+.login-button button {
+  background-color: white;
+}
+
+.login-button button:hover {
+  background-color: #ffffff;
 }
 
 .chat-container {
