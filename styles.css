@@ -3,14 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
   height: 100vh;
   background: linear-gradient(135deg, #000, #111, #222);
   color: #fff;
@@ -18,12 +17,37 @@ body {
 }
 
 /* Header */
-header h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #00bcd4;
-  margin-bottom: 20px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #121212; /* Dark background */
+  color: #fff;
 }
+
+header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00e1ff; /* Cyan for a futuristic look */
+}
+
+.nav {
+  display: flex;
+  gap: 20px; /* Space between links */
+}
+
+.nav a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #ccc; /* Light grey for contrast */
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #00e1ff; /* Cyan hover effect */
+}
+
 
 /* Main Content */
 main {
@@ -98,6 +122,11 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+footer p {
+  font-size: 1rem;
+  padding: 0.3rem;
 }
 
 /* Social Links */
